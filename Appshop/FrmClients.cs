@@ -45,5 +45,10 @@ namespace Appshop
             addClients();
             //dfdsfdsfdfd
         }
+
+        private void gunaControlBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -59,7 +59,7 @@
             this.TxtPassword.HoverState.Parent = this.TxtPassword;
             this.TxtPassword.Location = new System.Drawing.Point(81, 278);
             this.TxtPassword.Name = "TxtPassword";
-            this.TxtPassword.PasswordChar = '\0';
+            this.TxtPassword.PasswordChar = '*';
             this.TxtPassword.PlaceholderText = "";
             this.TxtPassword.SelectedText = "";
             this.TxtPassword.ShadowDecoration.Parent = this.TxtPassword;

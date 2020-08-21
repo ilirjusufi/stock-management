@@ -36,7 +36,7 @@ namespace Appshop
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'kundbasDataSet.Clients' table. You can move, or remove it, as needed.
-            TxtLoginuser.Text = UserSesioni1.CurrentUser.Username;
+            TxtLoginuser.Text = UserSesioni1.CurrentUser;
 
         }
     }

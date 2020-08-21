@@ -14,6 +14,7 @@ namespace Appshop
 {
     public partial class FrmLogin : Form
     {
+        private Users userss;
         public FrmLogin()
         {
             
@@ -24,31 +25,28 @@ namespace Appshop
 
         private void gunaButton2_Click(object sender, EventArgs e)
         {
-            var users = new Users();
+            
             UsersDb usersdb = new UsersDb();
-            users.Username = Txtusers.Text;
-            users.Password = TxtPassword.Text;
-            usersdb.Login(users);
-            if (users.Username.Trim() != "" && users.Password != "")
+            string Username = Txtusers.Text;
+            string Password = TxtPassword.Text;
+            usersdb.Login( Username,Password);
+           
+            if (Users.sendusername != null && Users.sendPassword != null)
             {
-                
-                if (users.Username != null)
-                {
-                    
-                        UserSesioni1.CurrentUser = users;
-                        this.Hide();
-                        Form1 frm = new Form1();
-                        frm.Show();
+                UserSesioni1.CurrentUser = Users.sendusername; ;
+                this.Hide();
+                Form1 frm = new Form1();
+                frm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Username or password not match");
+                Application.Restart();
 
-                }
-                else
-                {
-                    MessageBox.Show("Error");
-                }
             }
 
-                
-           
+
+
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)

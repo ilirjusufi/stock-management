@@ -8,6 +8,7 @@ namespace Appshop
 {
     public class UserSesioni1
     {
-        public static Users CurrentUser = null;
+        public static string CurrentUser = null;
+        
     }
 }

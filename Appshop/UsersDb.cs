@@ -10,7 +10,7 @@ namespace Appshop
 {
     public class UsersDb
     {
-        public void Login(Users Login)
+        public void Login( string username,string password)
         {
             try
             {
@@ -18,8 +18,8 @@ namespace Appshop
                 {
                     using (var cmd = DbConnection.Command(conn, "dbo.Login", CommandType.StoredProcedure))
                     {
-                        DbConnection.AddParameter(cmd, "@Username", Login.Username);
-                        DbConnection.AddParameter(cmd, "@Password", Login.Password);
+                        DbConnection.AddParameter(cmd, "@Username", username);
+                        DbConnection.AddParameter(cmd, "@Password", password);
 
                         using (var reader = cmd.ExecuteReader())
                         {
@@ -44,9 +44,10 @@ namespace Appshop
      
         public Users ToObject(SqlDataReader reader)
         {
-            Users user = new Users();
-            user.ID = int.Parse(reader["UserID"].ToString());
-            user.Username = reader["Username"].ToString();
+           
+            
+            Users.sendusername = reader["Username"].ToString();
+            Users.sendPassword  = reader["Password"].ToString();
             //if (reader["EmployeeID"] != DBNull.Value)
             //    user.ID = int.Parse(reader["EmployeeID"].ToString());
             //user.UserRoleID = int.Parse(reader["RoliID"].ToString());
@@ -63,7 +64,7 @@ namespace Appshop
             //user.InsertDate = (DateTime)reader["InsertDate"];
             //update
 
-            return user;
+            return null;
 
         }
     }
