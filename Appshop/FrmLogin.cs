@@ -14,13 +14,10 @@ namespace Appshop
 {
     public partial class FrmLogin : Form
     {
-        private Users userss;
+        
         public FrmLogin()
-        {
-            
+        {          
             InitializeComponent();
-            
-            
         }
 
         private void gunaButton2_Click(object sender, EventArgs e)
@@ -33,7 +30,7 @@ namespace Appshop
            
             if (Users.sendusername != null && Users.sendPassword != null)
             {
-                UserSesioni1.CurrentUser = Users.sendusername; ;
+                UserSesioni1.CurrentUser = Users.sendusername; 
                 this.Hide();
                 Form1 frm = new Form1();
                 frm.Show();
@@ -44,11 +41,7 @@ namespace Appshop
                 Application.Restart();
 
             }
-
-
-
         }
-
         private void FrmLogin_Load(object sender, EventArgs e)
         {
 

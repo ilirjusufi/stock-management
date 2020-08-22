@@ -23,10 +23,10 @@ namespace Appshop.Clases
                     DbConnection.AddParameter(cmd, "@Name", addC.Name);
                     DbConnection.AddParameter(cmd, "@Surname", addC.Surname);
                     DbConnection.AddParameter(cmd, "@Addres", addC.Addres);
-                    DbConnection.AddParameter(cmd, "@City", addC.Email);
+                    DbConnection.AddParameter(cmd, "@City", addC.City);
                     DbConnection.AddParameter(cmd, "@email", addC.Email);
                     DbConnection.AddParameter(cmd, "@Description", addC.Description);
-                    DbConnection.AddParameter(cmd, "@insertby", 1);
+                    DbConnection.AddParameter(cmd, "@insertby", Users.ID);
                     cmd.ExecuteNonQuery();
                 }
 

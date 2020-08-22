@@ -34,7 +34,7 @@ namespace Appshop
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception )
             {
 
                
@@ -44,8 +44,8 @@ namespace Appshop
      
         public Users ToObject(SqlDataReader reader)
         {
-           
-            
+
+            Users.ID = Convert.ToInt32(reader["UserID"]);
             Users.sendusername = reader["Username"].ToString();
             Users.sendPassword  = reader["Password"].ToString();
             //if (reader["EmployeeID"] != DBNull.Value)

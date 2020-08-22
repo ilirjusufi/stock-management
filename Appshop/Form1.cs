@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Appshop.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +39,16 @@ namespace Appshop
             // TODO: This line of code loads data into the 'kundbasDataSet.Clients' table. You can move, or remove it, as needed.
             TxtLoginuser.Text = UserSesioni1.CurrentUser;
 
+        }
+
+        private void gunaAdvenceButton3_Click(object sender, EventArgs e)
+        {
+            
+            var ClientsList = new FrmClietsList();
+            if (ClientsList.ShowDialog() == DialogResult.Abort)
+            {
+                
+            }
         }
     }
 }
