@@ -6,9 +6,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+
 
 namespace Appshop
 {
@@ -29,17 +32,20 @@ namespace Appshop
             }
             else
             {
-                Addc.Name = TxtName.Text;
-                Addc.Surname = TxtSurname.Text;
-                Addc.Addres = TxtAddres.Text;
-                Addc.City = TxtCity.Text;
-                Addc.Email = TxtEmail.Text;
-                Addc.Description = TxtDess.Text;
+                Addc.Name = ToUper.Touperc(TxtName.Text);
+                Addc.Surname = ToUper.Touperc(TxtSurname.Text);
+                Addc.Addres = ToUper.Touperc(TxtAddres.Text);
+                Addc.City = ToUper.Touperc(TxtCity.Text);
+                Addc.Email = ToUper.Touperc(TxtEmail.Text);
+                Addc.Description = ToUper.Touperc(TxtDess.Text);
                 Dbo.AddClients(Addc);
                 MessageBox.Show("Data as inserted","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
+
+            
             
         }
+       
         private void gunaButton2_Click(object sender, EventArgs e)
         {
             addClients();
@@ -47,6 +53,11 @@ namespace Appshop
         }
 
         private void gunaControlBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

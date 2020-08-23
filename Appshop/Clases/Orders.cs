@@ -11,5 +11,6 @@ namespace Appshop.Clases
         public int OrderID { get; set; }
         public Clients ClientID { get; set; }
         public Products ProductID { get; set; }
+        public int Quantity { get; set; }
     }
 }

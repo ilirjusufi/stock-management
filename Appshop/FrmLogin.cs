@@ -19,7 +19,11 @@ namespace Appshop
         {          
             InitializeComponent();
         }
+        static string Touperc(string uper)
+        {
 
+            return uper[0].ToString().ToUpper()+uper.Substring(1);
+        }
         private void gunaButton2_Click(object sender, EventArgs e)
         {
             
@@ -30,21 +34,28 @@ namespace Appshop
            
             if (Users.sendusername != null && Users.sendPassword != null)
             {
-                UserSesioni1.CurrentUser = Users.sendusername; 
+                UserSesioni1.CurrentUser = Touperc(Users.sendusername); 
                 this.Hide();
                 Form1 frm = new Form1();
                 frm.Show();
             }
             else
             {
-                MessageBox.Show("Username or password not match");
-                Application.Restart();
+                MessageBox.Show("Username or password not match","Login error",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                Txtusers.BorderColor = Color.Red;
+                TxtPassword.BorderColor = Color.Red;
 
             }
         }
         private void FrmLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            Invoice ina = new Invoice();
+            ina.Show();
         }
     }
 }

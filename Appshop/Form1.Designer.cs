@@ -60,6 +60,8 @@
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.kundbasDataSet = new Appshop.KundbasDataSet();
+            this.gunaButton2 = new Guna.UI.WinForms.GunaButton();
+            this.gunaVSeparator1 = new Guna.UI.WinForms.GunaVSeparator();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.gunaAdvenceButton6 = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -88,6 +90,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(74)))), ((int)(((byte)(135)))));
+            this.panel1.Controls.Add(this.gunaVSeparator1);
+            this.panel1.Controls.Add(this.gunaButton2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.TxtLoginuser);
             this.panel1.Controls.Add(this.UjupShop);
@@ -102,7 +106,7 @@
             this.TxtLoginuser.AutoSize = true;
             this.TxtLoginuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtLoginuser.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.TxtLoginuser.Location = new System.Drawing.Point(952, 20);
+            this.TxtLoginuser.Location = new System.Drawing.Point(897, 20);
             this.TxtLoginuser.Name = "TxtLoginuser";
             this.TxtLoginuser.Size = new System.Drawing.Size(53, 16);
             this.TxtLoginuser.TabIndex = 2;
@@ -349,6 +353,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(247, 114);
             this.panel5.TabIndex = 3;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // guna2CircleProgressBar3
             // 
@@ -409,6 +414,40 @@
             // 
             this.kundbasDataSet.DataSetName = "KundbasDataSet";
             this.kundbasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gunaButton2
+            // 
+            this.gunaButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaButton2.AnimationSpeed = 0.03F;
+            this.gunaButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(74)))), ((int)(((byte)(135)))));
+            this.gunaButton2.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.gunaButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaButton2.ForeColor = System.Drawing.Color.White;
+            this.gunaButton2.Image = null;
+            this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton2.Location = new System.Drawing.Point(957, 14);
+            this.gunaButton2.Name = "gunaButton2";
+            this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
+            this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton2.OnHoverImage = null;
+            this.gunaButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton2.Size = new System.Drawing.Size(51, 28);
+            this.gunaButton2.TabIndex = 4;
+            this.gunaButton2.Text = "Logout";
+            this.gunaButton2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaButton2.Click += new System.EventHandler(this.gunaButton2_Click);
+            // 
+            // gunaVSeparator1
+            // 
+            this.gunaVSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.gunaVSeparator1.LineColor = System.Drawing.Color.Silver;
+            this.gunaVSeparator1.Location = new System.Drawing.Point(948, 9);
+            this.gunaVSeparator1.Name = "gunaVSeparator1";
+            this.gunaVSeparator1.Size = new System.Drawing.Size(10, 39);
+            this.gunaVSeparator1.TabIndex = 5;
             // 
             // pictureBox4
             // 
@@ -499,6 +538,7 @@
             this.gunaAdvenceButton5.Size = new System.Drawing.Size(197, 56);
             this.gunaAdvenceButton5.TabIndex = 3;
             this.gunaAdvenceButton5.Text = "Add Product";
+            this.gunaAdvenceButton5.Click += new System.EventHandler(this.gunaAdvenceButton5_Click);
             // 
             // gunaAdvenceButton4
             // 
@@ -621,11 +661,12 @@
             this.gunaAdvenceButton1.Size = new System.Drawing.Size(197, 56);
             this.gunaAdvenceButton1.TabIndex = 0;
             this.gunaAdvenceButton1.Text = "Add Order";
+            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Appshop.Properties.Resources.male_avatar_512;
-            this.pictureBox1.Location = new System.Drawing.Point(909, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(854, 10);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -637,7 +678,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(1036, 492);
+            this.ClientSize = new System.Drawing.Size(1021, 492);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -648,6 +689,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -710,6 +752,8 @@
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton6;
         private KundbasDataSet kundbasDataSet;
         private System.Windows.Forms.BindingSource clientsBindingSource;
+        private Guna.UI.WinForms.GunaButton gunaButton2;
+        private Guna.UI.WinForms.GunaVSeparator gunaVSeparator1;
     }
 }
 

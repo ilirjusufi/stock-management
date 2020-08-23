@@ -39,6 +39,7 @@ namespace Appshop
             // TODO: This line of code loads data into the 'kundbasDataSet.Clients' table. You can move, or remove it, as needed.
             TxtLoginuser.Text = UserSesioni1.CurrentUser;
 
+
         }
 
         private void gunaAdvenceButton3_Click(object sender, EventArgs e)
@@ -48,6 +49,41 @@ namespace Appshop
             if (ClientsList.ShowDialog() == DialogResult.Abort)
             {
                 
+            }
+        }
+
+       
+        private void gunaAdvenceButton5_Click(object sender, EventArgs e)
+        {
+            var FrmProduct = new FrmProduct();
+            if (FrmProduct.ShowDialog() == DialogResult.Abort)
+            {
+
+            }
+            
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        {
+            var FrmOrders = new FrmOrders();
+            if (FrmOrders.ShowDialog() == DialogResult.Abort)
+            {
+
             }
         }
     }
