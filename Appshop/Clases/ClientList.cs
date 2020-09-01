@@ -10,7 +10,7 @@ namespace Appshop.Clases
 {
     public class ClientList
     {
-        public static List<Clients> Clientlists(string search)
+        public static List<Clients> Clientlists(string search )
         {
             List<Clients> Clist = new List<Clients>();
             var cnn = DbConnection.GetConnection();
