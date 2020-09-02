@@ -38,6 +38,9 @@ namespace Appshop
                 Addc.City = ToUper.Touperc(TxtCity.Text);
                 Addc.Email = ToUper.Touperc(TxtEmail.Text);
                 Addc.Description = ToUper.Touperc(TxtDess.Text);
+                Addc.CompanyNo = ToUper.Touperc(TxtCompanyNo.Text);
+                Addc.Phone = TxtPhone.Text;
+                Addc.CompanyName = ToUper.Touperc(TxtCompanyname.Text);
                 Dbo.AddClients(Addc);
                 MessageBox.Show("Data as inserted","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
@@ -60,6 +63,35 @@ namespace Appshop
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        public void GetEdit(string Name, string Surname, string Address, string city, string Email, string Desc,int clientid,string companyno,string companyname,string phone)
+        {
+            TxtName.Text = Name;
+            TxtSurname.Text = Surname;
+            TxtAddres.Text = Address;
+            TxtEmail.Text = Email;
+            TxtDess.Text = Desc;
+            TxtCity.Text = city;
+            Addc.ClientID = clientid;
+            Addc.CompanyNo = companyno;
+            Addc.CompanyName = companyname;
+            Addc.Phone = phone;
+            this.Show();
+        }
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            Addc.Name = ToUper.Touperc(TxtName.Text);
+            Addc.Surname = ToUper.Touperc(TxtSurname.Text);
+            Addc.Addres = ToUper.Touperc(TxtAddres.Text);
+            Addc.City = ToUper.Touperc(TxtCity.Text);
+            Addc.Email = ToUper.Touperc(TxtEmail.Text);
+            Addc.Phone = TxtPhone.Text;
+            Addc.Description = ToUper.Touperc(TxtDess.Text);
+            Addc.CompanyNo = ToUper.Touperc(TxtCompanyNo.Text);
+            Addc.CompanyName = ToUper.Touperc(TxtCompanyname.Text);
+            Dbo.EditClients(Addc);
+            MessageBox.Show("Data as inserted", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

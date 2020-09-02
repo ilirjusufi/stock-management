@@ -26,6 +26,8 @@ namespace Appshop.Clases
                     DbConnection.AddParameter(cmd, "@City", addC.City);
                     DbConnection.AddParameter(cmd, "@email", addC.Email);
                     DbConnection.AddParameter(cmd, "@Description", addC.Description);
+                    DbConnection.AddParameter(cmd, "@CompanyName", addC.CompanyName);
+                    DbConnection.AddParameter(cmd, "@CompanyNo", addC.CompanyNo);
                     DbConnection.AddParameter(cmd, "@insertby", Users.ID);
                     cmd.ExecuteNonQuery();
                 }
@@ -33,6 +35,28 @@ namespace Appshop.Clases
             }
 
         }
-       
+        public void EditClients(Clients addC)
+        {
+
+            using (var conn = DbConnection.GetConnection())
+            {
+
+                using (var cmd = DbConnection.Command(conn, "dbo.Shop_editoklient", CommandType.StoredProcedure))
+                {
+                    DbConnection.AddParameter(cmd, "@ClientID", addC.ClientID);
+                    DbConnection.AddParameter(cmd, "@Name", addC.Name);
+                    DbConnection.AddParameter(cmd, "@Surname", addC.Surname);
+                    DbConnection.AddParameter(cmd, "@Addres", addC.Addres);
+                    DbConnection.AddParameter(cmd, "@City", addC.City);
+                    DbConnection.AddParameter(cmd, "@email", addC.Email);
+                    DbConnection.AddParameter(cmd, "@Description", addC.Description);
+                    DbConnection.AddParameter(cmd, "@insertby", Users.ID);
+                    cmd.ExecuteNonQuery();
+                }
+
+            }
+
+        }
+
     }
 }

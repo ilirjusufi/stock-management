@@ -39,6 +39,8 @@ namespace Appshop.Clases
                 d.City = dr["City"].ToString();
                 d.Email = dr["Email"].ToString();
                 d.Description = dr["Description"].ToString();
+                d.CompanyName = dr["CompanyName"].ToString();
+                d.CompanyNo = (dr["CompanyNo"].ToString());
                 Clist.Add(d);
 
             }

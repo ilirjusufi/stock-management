@@ -47,5 +47,25 @@ namespace Appshop
 
             });
         }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            FrmClients frClients = new FrmClients();
+            if(this.DatagridClients[0, DatagridClients.CurrentCell.RowIndex].Value.ToString() != null)
+            {
+                string Name = (this.DatagridClients[1, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                string Surname = (this.DatagridClients[2, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                string Address = (this.DatagridClients[3, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                string City = (this.DatagridClients[4, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                string Email = (this.DatagridClients[5, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                string Desc = (this.DatagridClients[6, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                string  Companyno = (this.DatagridClients[7, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                string CpmpanyName = (this.DatagridClients[8, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                int clientid = Convert.ToInt32(this.DatagridClients[0, DatagridClients.CurrentCell.RowIndex].Value);
+                string phone = (this.DatagridClients[9, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                frClients.GetEdit(Name, Surname, Address, City, Email, Desc, clientid, Companyno, CpmpanyName,phone);
+
+            }
+        }
     }
 }

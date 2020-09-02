@@ -13,8 +13,10 @@ namespace Appshop.Clases
         public string Surname { get; set; }
         public string Addres { get; set; }
         public string City { get; set; }
+        public string Phone { get; set; }
         public string Email { get; set; }
-
+        public string CompanyName { get; set; }
+        public string CompanyNo { get; set; }
         public string Description { get; set; }
 
     }
