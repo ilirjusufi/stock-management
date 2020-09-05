@@ -67,16 +67,16 @@ namespace Appshop
 
         public void GetEdit(string Name, string Surname, string Address, string city, string Email, string Desc,int clientid,string companyno,string companyname,string phone)
         {
+            Addc.ClientID = clientid;
             TxtName.Text = Name;
             TxtSurname.Text = Surname;
             TxtAddres.Text = Address;
             TxtEmail.Text = Email;
             TxtDess.Text = Desc;
             TxtCity.Text = city;
-            Addc.ClientID = clientid;
-            Addc.CompanyNo = companyno;
-            Addc.CompanyName = companyname;
-            Addc.Phone = phone;
+            TxtCompanyNo.Text = companyno;
+            TxtCompanyname.Text = companyname;            
+            TxtPhone.Text = phone;
             this.Show();
         }
         private void gunaButton1_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace Appshop
             Addc.CompanyNo = ToUper.Touperc(TxtCompanyNo.Text);
             Addc.CompanyName = ToUper.Touperc(TxtCompanyname.Text);
             Dbo.EditClients(Addc);
-            MessageBox.Show("Data as inserted", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Data as editet", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

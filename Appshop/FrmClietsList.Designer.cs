@@ -40,17 +40,17 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.BtnDelete = new Guna.UI.WinForms.GunaButton();
             this.BtnEdit = new Guna.UI.WinForms.GunaButton();
-            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ClientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompanyNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatagridClients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
@@ -85,16 +85,16 @@
             this.DatagridClients.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DatagridClients.ColumnHeadersHeight = 21;
             this.DatagridClients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ClientID,
+            this.clientIDDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.surnameDataGridViewTextBoxColumn,
             this.addresDataGridViewTextBoxColumn,
             this.cityDataGridViewTextBoxColumn,
+            this.phoneDataGridViewTextBoxColumn,
             this.emailDataGridViewTextBoxColumn,
-            this.descriptionDataGridViewTextBoxColumn,
-            this.CompanyNo,
-            this.CompanyName,
-            this.Phone});
+            this.companyNameDataGridViewTextBoxColumn,
+            this.companyNoDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn});
             this.DatagridClients.DataSource = this.clientsBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -135,6 +135,7 @@
             this.DatagridClients.ThemeStyle.RowsStyle.Height = 22;
             this.DatagridClients.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.DatagridClients.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.DatagridClients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatagridClients_CellContentClick);
             // 
             // TxtSearch
             // 
@@ -222,6 +223,7 @@
             this.BtnDelete.TabIndex = 6;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnEdit
             // 
@@ -248,15 +250,11 @@
             this.BtnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
-            // clientsBindingSource
+            // clientIDDataGridViewTextBoxColumn
             // 
-            this.clientsBindingSource.DataSource = typeof(Appshop.Clases.Clients);
-            // 
-            // ClientID
-            // 
-            this.ClientID.DataPropertyName = "ClientID";
-            this.ClientID.HeaderText = "ClientID";
-            this.ClientID.Name = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.DataPropertyName = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.HeaderText = "ClientID";
+            this.clientIDDataGridViewTextBoxColumn.Name = "clientIDDataGridViewTextBoxColumn";
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -282,11 +280,29 @@
             this.cityDataGridViewTextBoxColumn.HeaderText = "City";
             this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
             // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // companyNameDataGridViewTextBoxColumn
+            // 
+            this.companyNameDataGridViewTextBoxColumn.DataPropertyName = "CompanyName";
+            this.companyNameDataGridViewTextBoxColumn.HeaderText = "CompanyName";
+            this.companyNameDataGridViewTextBoxColumn.Name = "companyNameDataGridViewTextBoxColumn";
+            // 
+            // companyNoDataGridViewTextBoxColumn
+            // 
+            this.companyNoDataGridViewTextBoxColumn.DataPropertyName = "CompanyNo";
+            this.companyNoDataGridViewTextBoxColumn.HeaderText = "CompanyNo";
+            this.companyNoDataGridViewTextBoxColumn.Name = "companyNoDataGridViewTextBoxColumn";
             // 
             // descriptionDataGridViewTextBoxColumn
             // 
@@ -294,23 +310,9 @@
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             // 
-            // CompanyNo
+            // clientsBindingSource
             // 
-            this.CompanyNo.DataPropertyName = "CompanyNo";
-            this.CompanyNo.HeaderText = "CompanyNo";
-            this.CompanyNo.Name = "CompanyNo";
-            // 
-            // CompanyName
-            // 
-            this.CompanyName.DataPropertyName = "CompanyName";
-            this.CompanyName.HeaderText = "CompName";
-            this.CompanyName.Name = "CompanyName";
-            // 
-            // Phone
-            // 
-            this.Phone.DataPropertyName = "Phone";
-            this.Phone.HeaderText = "Phone";
-            this.Phone.Name = "Phone";
+            this.clientsBindingSource.DataSource = typeof(Appshop.Clases.Clients);
             // 
             // FrmClietsList
             // 
@@ -347,16 +349,16 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI.WinForms.GunaButton BtnDelete;
         private Guna.UI.WinForms.GunaButton BtnEdit;
-        private System.Windows.Forms.BindingSource clientsBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addresDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn companyNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn companyNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.BindingSource clientsBindingSource;
     }
 }

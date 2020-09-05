@@ -57,15 +57,31 @@ namespace Appshop
                 string Surname = (this.DatagridClients[2, DatagridClients.CurrentCell.RowIndex].Value.ToString());
                 string Address = (this.DatagridClients[3, DatagridClients.CurrentCell.RowIndex].Value.ToString());
                 string City = (this.DatagridClients[4, DatagridClients.CurrentCell.RowIndex].Value.ToString());
-                string Email = (this.DatagridClients[5, DatagridClients.CurrentCell.RowIndex].Value.ToString());
-                string Desc = (this.DatagridClients[6, DatagridClients.CurrentCell.RowIndex].Value.ToString());
-                string  Companyno = (this.DatagridClients[7, DatagridClients.CurrentCell.RowIndex].Value.ToString());
-                string CpmpanyName = (this.DatagridClients[8, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                string Email = (this.DatagridClients[6, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                string Desc = (this.DatagridClients[9, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                string  Companyno = (this.DatagridClients[8, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                string CpmpanyName = (this.DatagridClients[7, DatagridClients.CurrentCell.RowIndex].Value.ToString());
                 int clientid = Convert.ToInt32(this.DatagridClients[0, DatagridClients.CurrentCell.RowIndex].Value);
-                string phone = (this.DatagridClients[9, DatagridClients.CurrentCell.RowIndex].Value.ToString());
-                frClients.GetEdit(Name, Surname, Address, City, Email, Desc, clientid, Companyno, CpmpanyName,phone);
+                string phone = (this.DatagridClients[5, DatagridClients.CurrentCell.RowIndex].Value.ToString());
+                frClients.GetEdit(Name, Surname, Address, City, Email, Desc, clientid, Companyno, CpmpanyName, phone);
 
             }
+        }
+
+        private void DatagridClients_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            if (this.DatagridClients[0, DatagridClients.CurrentCell.RowIndex].Value.ToString() != null)
+            {
+                int clientiddel = Convert.ToInt32(this.DatagridClients[0, DatagridClients.CurrentCell.RowIndex].Value);
+                ClientList.Delete(clientiddel);
+                LoadData();
+            }
+
         }
     }
 }

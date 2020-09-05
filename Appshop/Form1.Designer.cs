@@ -47,30 +47,42 @@
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2CircleProgressBar1 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblOrders = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.gunaAdvenceButton6 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.OrderNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Shipping = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Taxvat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderListBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.kundbasDataSet1 = new Appshop.KundbasDataSet1();
             this.label8 = new System.Windows.Forms.Label();
+            this.orderListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kundbasDataSet = new Appshop.KundbasDataSet();
             this.panel4 = new System.Windows.Forms.Panel();
             this.guna2CircleProgressBar2 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblClients = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.guna2CircleProgressBar3 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblProducts = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderListTableAdapter = new Appshop.KundbasDataSetTableAdapters.OrderListTableAdapter();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.guna2CircleProgressBar4 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
+            this.lblSales = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.orderListTableAdapter1 = new Appshop.KundbasDataSet1TableAdapters.OrderListTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -78,11 +90,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderListBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kundbasDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kundbasDataSet)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,7 +113,7 @@
             this.panel1.Controls.Add(this.UjupShop);
             this.panel1.Location = new System.Drawing.Point(1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1035, 56);
+            this.panel1.Size = new System.Drawing.Size(1224, 56);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -103,7 +121,7 @@
             // 
             this.gunaVSeparator1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.gunaVSeparator1.LineColor = System.Drawing.Color.Silver;
-            this.gunaVSeparator1.Location = new System.Drawing.Point(948, 9);
+            this.gunaVSeparator1.Location = new System.Drawing.Point(1144, 11);
             this.gunaVSeparator1.Name = "gunaVSeparator1";
             this.gunaVSeparator1.Size = new System.Drawing.Size(10, 39);
             this.gunaVSeparator1.TabIndex = 5;
@@ -120,7 +138,7 @@
             this.gunaButton2.ForeColor = System.Drawing.Color.White;
             this.gunaButton2.Image = null;
             this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaButton2.Location = new System.Drawing.Point(957, 14);
+            this.gunaButton2.Location = new System.Drawing.Point(1153, 16);
             this.gunaButton2.Name = "gunaButton2";
             this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.RoyalBlue;
             this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -136,7 +154,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Appshop.Properties.Resources.male_avatar_512;
-            this.pictureBox1.Location = new System.Drawing.Point(854, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(1050, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 38);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -148,7 +166,7 @@
             this.TxtLoginuser.AutoSize = true;
             this.TxtLoginuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtLoginuser.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.TxtLoginuser.Location = new System.Drawing.Point(897, 20);
+            this.TxtLoginuser.Location = new System.Drawing.Point(1093, 22);
             this.TxtLoginuser.Name = "TxtLoginuser";
             this.TxtLoginuser.Size = new System.Drawing.Size(53, 16);
             this.TxtLoginuser.TabIndex = 2;
@@ -175,7 +193,7 @@
             this.panel2.Controls.Add(this.gunaAdvenceButton1);
             this.panel2.Location = new System.Drawing.Point(1, 108);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(194, 371);
+            this.panel2.Size = new System.Drawing.Size(194, 504);
             this.panel2.TabIndex = 1;
             // 
             // gunaAdvenceButton5
@@ -336,7 +354,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.guna2CircleProgressBar1);
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.lblOrders);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.label2);
             this.panel3.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
@@ -358,16 +376,16 @@
             this.guna2CircleProgressBar1.TabIndex = 0;
             this.guna2CircleProgressBar1.Value = 3;
             // 
-            // label5
+            // lblOrders
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(60, 35);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 25);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "3+";
+            this.lblOrders.AutoSize = true;
+            this.lblOrders.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrders.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblOrders.Location = new System.Drawing.Point(60, 35);
+            this.lblOrders.Name = "lblOrders";
+            this.lblOrders.Size = new System.Drawing.Size(36, 25);
+            this.lblOrders.TabIndex = 5;
+            this.lblOrders.Text = "3+";
             // 
             // pictureBox2
             // 
@@ -398,7 +416,7 @@
             this.panel6.Controls.Add(this.label8);
             this.panel6.Location = new System.Drawing.Point(219, 195);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(792, 284);
+            this.panel6.Size = new System.Drawing.Size(1006, 417);
             this.panel6.TabIndex = 3;
             // 
             // gunaAdvenceButton6
@@ -419,7 +437,7 @@
             this.gunaAdvenceButton6.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton6.Image")));
             this.gunaAdvenceButton6.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton6.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton6.Location = new System.Drawing.Point(645, 8);
+            this.gunaAdvenceButton6.Location = new System.Drawing.Point(868, 8);
             this.gunaAdvenceButton6.Name = "gunaAdvenceButton6";
             this.gunaAdvenceButton6.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaAdvenceButton6.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -430,11 +448,13 @@
             this.gunaAdvenceButton6.Size = new System.Drawing.Size(132, 30);
             this.gunaAdvenceButton6.TabIndex = 8;
             this.gunaAdvenceButton6.Text = "Export to exel";
+            this.gunaAdvenceButton6.Click += new System.EventHandler(this.gunaAdvenceButton6_Click);
             // 
             // guna2DataGridView1
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.guna2DataGridView1.AutoGenerateColumns = false;
             this.guna2DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.guna2DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -450,11 +470,13 @@
             this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.guna2DataGridView1.ColumnHeadersHeight = 21;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.OrderNumber,
-            this.ClientName,
-            this.Product,
-            this.Column1,
-            this.Column2});
+            this.nameDataGridViewTextBoxColumn,
+            this.surnameDataGridViewTextBoxColumn,
+            this.productNameDataGridViewTextBoxColumn,
+            this.Shipping,
+            this.Taxvat,
+            this.Total});
+            this.guna2DataGridView1.DataSource = this.orderListBindingSource1;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -469,7 +491,7 @@
             this.guna2DataGridView1.Name = "guna2DataGridView1";
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(760, 237);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(983, 237);
             this.guna2DataGridView1.TabIndex = 7;
             this.guna2DataGridView1.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -494,30 +516,51 @@
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // OrderNumber
+            // nameDataGridViewTextBoxColumn
             // 
-            this.OrderNumber.HeaderText = "OrderID";
-            this.OrderNumber.Name = "OrderNumber";
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // ClientName
+            // surnameDataGridViewTextBoxColumn
             // 
-            this.ClientName.HeaderText = "ClientName";
-            this.ClientName.Name = "ClientName";
+            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "Surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Surname";
+            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
             // 
-            // Product
+            // productNameDataGridViewTextBoxColumn
             // 
-            this.Product.HeaderText = "Product";
-            this.Product.Name = "Product";
+            this.productNameDataGridViewTextBoxColumn.DataPropertyName = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.HeaderText = "ProductName";
+            this.productNameDataGridViewTextBoxColumn.Name = "productNameDataGridViewTextBoxColumn";
             // 
-            // Column1
+            // Shipping
             // 
-            this.Column1.HeaderText = "Sku";
-            this.Column1.Name = "Column1";
+            this.Shipping.DataPropertyName = "Shipping";
+            this.Shipping.HeaderText = "Shipping";
+            this.Shipping.Name = "Shipping";
             // 
-            // Column2
+            // Taxvat
             // 
-            this.Column2.HeaderText = "TotalPrice";
-            this.Column2.Name = "Column2";
+            this.Taxvat.DataPropertyName = "Taxvat";
+            this.Taxvat.HeaderText = "Taxvat";
+            this.Taxvat.Name = "Taxvat";
+            // 
+            // Total
+            // 
+            this.Total.DataPropertyName = "Total";
+            this.Total.HeaderText = "Total";
+            this.Total.Name = "Total";
+            // 
+            // orderListBindingSource1
+            // 
+            this.orderListBindingSource1.DataMember = "OrderList";
+            this.orderListBindingSource1.DataSource = this.kundbasDataSet1;
+            // 
+            // kundbasDataSet1
+            // 
+            this.kundbasDataSet1.DataSetName = "KundbasDataSet1";
+            this.kundbasDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label8
             // 
@@ -530,14 +573,24 @@
             this.label8.TabIndex = 6;
             this.label8.Text = "List of all orderes";
             // 
+            // orderListBindingSource
+            // 
+            this.orderListBindingSource.DataMember = "OrderList";
+            this.orderListBindingSource.DataSource = this.kundbasDataSet;
+            // 
+            // kundbasDataSet
+            // 
+            this.kundbasDataSet.DataSetName = "KundbasDataSet";
+            this.kundbasDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.guna2CircleProgressBar2);
-            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.lblClients);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.pictureBox3);
-            this.panel4.Location = new System.Drawing.Point(492, 62);
+            this.panel4.Location = new System.Drawing.Point(472, 62);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(247, 114);
             this.panel4.TabIndex = 3;
@@ -556,16 +609,16 @@
             this.guna2CircleProgressBar2.TabIndex = 0;
             this.guna2CircleProgressBar2.Value = 3;
             // 
-            // label6
+            // lblClients
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Maroon;
-            this.label6.Location = new System.Drawing.Point(57, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 25);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "3+";
+            this.lblClients.AutoSize = true;
+            this.lblClients.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClients.ForeColor = System.Drawing.Color.Maroon;
+            this.lblClients.Location = new System.Drawing.Point(57, 35);
+            this.lblClients.Name = "lblClients";
+            this.lblClients.Size = new System.Drawing.Size(36, 25);
+            this.lblClients.TabIndex = 7;
+            this.lblClients.Text = "3+";
             // 
             // label3
             // 
@@ -592,10 +645,10 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.guna2CircleProgressBar3);
-            this.panel5.Controls.Add(this.label7);
+            this.panel5.Controls.Add(this.lblProducts);
             this.panel5.Controls.Add(this.label4);
             this.panel5.Controls.Add(this.pictureBox4);
-            this.panel5.Location = new System.Drawing.Point(764, 62);
+            this.panel5.Location = new System.Drawing.Point(725, 62);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(247, 114);
             this.panel5.TabIndex = 3;
@@ -613,16 +666,16 @@
             this.guna2CircleProgressBar3.TabIndex = 0;
             this.guna2CircleProgressBar3.Value = 3;
             // 
-            // label7
+            // lblProducts
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Chartreuse;
-            this.label7.Location = new System.Drawing.Point(57, 35);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 25);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "3+";
+            this.lblProducts.AutoSize = true;
+            this.lblProducts.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProducts.ForeColor = System.Drawing.Color.Chartreuse;
+            this.lblProducts.Location = new System.Drawing.Point(57, 35);
+            this.lblProducts.Name = "lblProducts";
+            this.lblProducts.Size = new System.Drawing.Size(36, 25);
+            this.lblProducts.TabIndex = 7;
+            this.lblProducts.Text = "3+";
             // 
             // label4
             // 
@@ -665,12 +718,79 @@
             // 
             this.clientsBindingSource.DataMember = "Clients";
             // 
+            // orderListTableAdapter
+            // 
+            this.orderListTableAdapter.ClearBeforeFill = true;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.Controls.Add(this.guna2CircleProgressBar4);
+            this.panel7.Controls.Add(this.lblSales);
+            this.panel7.Controls.Add(this.label9);
+            this.panel7.Controls.Add(this.pictureBox5);
+            this.panel7.Location = new System.Drawing.Point(978, 62);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(247, 114);
+            this.panel7.TabIndex = 8;
+            // 
+            // guna2CircleProgressBar4
+            // 
+            this.guna2CircleProgressBar4.FillThickness = 15;
+            this.guna2CircleProgressBar4.Location = new System.Drawing.Point(135, 15);
+            this.guna2CircleProgressBar4.Name = "guna2CircleProgressBar4";
+            this.guna2CircleProgressBar4.ProgressColor = System.Drawing.Color.DarkSeaGreen;
+            this.guna2CircleProgressBar4.ProgressColor2 = System.Drawing.Color.DarkOliveGreen;
+            this.guna2CircleProgressBar4.ProgressThickness = 15;
+            this.guna2CircleProgressBar4.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CircleProgressBar4.ShadowDecoration.Parent = this.guna2CircleProgressBar4;
+            this.guna2CircleProgressBar4.Size = new System.Drawing.Size(84, 84);
+            this.guna2CircleProgressBar4.TabIndex = 0;
+            this.guna2CircleProgressBar4.Value = 3;
+            // 
+            // lblSales
+            // 
+            this.lblSales.AutoSize = true;
+            this.lblSales.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSales.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblSales.Location = new System.Drawing.Point(57, 35);
+            this.lblSales.Name = "lblSales";
+            this.lblSales.Size = new System.Drawing.Size(36, 25);
+            this.lblSales.TabIndex = 7;
+            this.lblSales.Text = "3+";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.DimGray;
+            this.label9.Location = new System.Drawing.Point(28, 69);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 13);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Total Sale";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Appshop.Properties.Resources.male_avatar_512;
+            this.pictureBox5.Location = new System.Drawing.Point(23, 28);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(27, 38);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 6;
+            this.pictureBox5.TabStop = false;
+            // 
+            // orderListTableAdapter1
+            // 
+            this.orderListTableAdapter1.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(1021, 492);
+            this.ClientSize = new System.Drawing.Size(1231, 613);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -693,6 +813,10 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderListBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kundbasDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kundbasDataSet)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -700,6 +824,9 @@
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -722,29 +849,41 @@
         private System.Windows.Forms.Panel panel5;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblOrders;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblClients;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox3;
         private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblProducts;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox4;
         private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ClientName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton6;
    
         private System.Windows.Forms.BindingSource clientsBindingSource;
         private Guna.UI.WinForms.GunaButton gunaButton2;
         private Guna.UI.WinForms.GunaVSeparator gunaVSeparator1;
+        private KundbasDataSet kundbasDataSet;
+        private System.Windows.Forms.BindingSource orderListBindingSource;
+        private KundbasDataSetTableAdapters.OrderListTableAdapter orderListTableAdapter;
+        private System.Windows.Forms.Panel panel7;
+        private Guna.UI2.WinForms.Guna2CircleProgressBar guna2CircleProgressBar4;
+        private System.Windows.Forms.Label lblSales;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private KundbasDataSet1 kundbasDataSet1;
+        private System.Windows.Forms.BindingSource orderListBindingSource1;
+        private KundbasDataSet1TableAdapters.OrderListTableAdapter orderListTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Shipping;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Taxvat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
     }
 }
 

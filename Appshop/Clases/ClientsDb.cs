@@ -28,6 +28,7 @@ namespace Appshop.Clases
                     DbConnection.AddParameter(cmd, "@Description", addC.Description);
                     DbConnection.AddParameter(cmd, "@CompanyName", addC.CompanyName);
                     DbConnection.AddParameter(cmd, "@CompanyNo", addC.CompanyNo);
+                    DbConnection.AddParameter(cmd, "@Phone", addC.Phone);
                     DbConnection.AddParameter(cmd, "@insertby", Users.ID);
                     cmd.ExecuteNonQuery();
                 }
@@ -47,6 +48,9 @@ namespace Appshop.Clases
                     DbConnection.AddParameter(cmd, "@Name", addC.Name);
                     DbConnection.AddParameter(cmd, "@Surname", addC.Surname);
                     DbConnection.AddParameter(cmd, "@Addres", addC.Addres);
+                    DbConnection.AddParameter(cmd, "@companyname", addC.CompanyName);
+                    DbConnection.AddParameter(cmd, "@companyNo", addC.CompanyNo);
+                    DbConnection.AddParameter(cmd, "@phone", addC.Phone);
                     DbConnection.AddParameter(cmd, "@City", addC.City);
                     DbConnection.AddParameter(cmd, "@email", addC.Email);
                     DbConnection.AddParameter(cmd, "@Description", addC.Description);

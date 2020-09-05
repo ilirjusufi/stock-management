@@ -41,11 +41,27 @@ namespace Appshop.Clases
                 d.Description = dr["Description"].ToString();
                 d.CompanyName = dr["CompanyName"].ToString();
                 d.CompanyNo = (dr["CompanyNo"].ToString());
+                d.Phone = (dr["Phone"].ToString());
                 Clist.Add(d);
 
             }
             cnn.Close();
             return Clist;
+        }
+        public static string Delete(int d)
+        {
+            var cnn = DbConnection.GetConnection();
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = cnn;
+
+            cmd.CommandText = "delete from Clients where ClientID = @ClientID";
+            cmd.Parameters.AddWithValue("@ClientID", d);
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteScalar();
+            cnn.Close();
+            cnn.Open();
+            return null;
         }
     }
 }
